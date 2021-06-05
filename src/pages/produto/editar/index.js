@@ -33,7 +33,7 @@ class EditarProduto extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
  
-        fetch(`https://pp1backend.herokuapp.com/produto/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}`)
             .then(data => {
                 data.json().then(data => {
                     if (data.error) {

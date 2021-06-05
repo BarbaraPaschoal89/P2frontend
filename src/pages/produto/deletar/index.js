@@ -27,7 +27,7 @@ class DeletarProduto extends Component {
     componentDidMount() {
         const { id } = this.props.match.params;
  
-        fetch(`https://backend-p1.herokuapp.com/produto/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}`)
             .then(data => {
                 data.json().then(data => {
                     if (data.error) {
